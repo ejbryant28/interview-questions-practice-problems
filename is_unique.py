@@ -45,11 +45,9 @@ def unique_chars(word):
 
 	for i in range(len(word)):
 		if i >=len(word):
-			# return True
 			break
 		for j in range(i + 1, len(word)):
 			if word[i] == word[j]:
-				# print('in the if and word at i is {} and word at j is {}'.format(word[i], word[j]))
 				return False
 	return True
 
