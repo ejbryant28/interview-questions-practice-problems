@@ -71,7 +71,28 @@ assert(merge_sort([1, 2, 5, -7, -4, 0])) == [-7, -4, 0, 1, 2, 5]
 
 
 def quick_sort(num_list):
-	pass
+
+	if not num_list:
+		return []
+	
+	mid = len(num_list)//2
+	pivot = num_list[mid]
+
+	hi, lo, eq = [], [], []
+
+	for num in num_list:
+		if num < pivot:
+			lo.append(num)
+		if num > pivot:
+			hi.append(num)
+		if num == pivot:
+			eq.append(num)
+
+	return quick_sort(lo) + eq  + quick_sort(hi)
+
+
+
+assert(quick_sort([1, 2, 5, -7, -4, 0])) == [-7, -4, 0, 1, 2, 5]
 
 
 
