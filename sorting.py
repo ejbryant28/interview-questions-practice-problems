@@ -10,7 +10,7 @@ def bubble_sort(num_list):
 
 	return num_list
 
-assert(bubble_sort([1, 2, 5, -7, -4, 0])) == [-7, -4, 0, 1, 2, 5]
+assert(bubble_sort([1, 2, 5, -7, -4, 0]) == [-7, -4, 0, 1, 2, 5])
 
 def merge_sort(num_list):
 	""""""
@@ -67,7 +67,7 @@ def make_merge_rec(lst_1, lst_2):
 
 
 
-assert(merge_sort([1, 2, 5, -7, -4, 0])) == [-7, -4, 0, 1, 2, 5]
+assert(merge_sort([1, 2, 5, -7, -4, 0]) == [-7, -4, 0, 1, 2, 5])
 
 
 def quick_sort(num_list):
@@ -92,7 +92,7 @@ def quick_sort(num_list):
 
 
 
-assert(quick_sort([1, 2, 5, -7, -4, 0])) == [-7, -4, 0, 1, 2, 5]
+assert(quick_sort([1, 2, 5, -7, -4, 0]) == [-7, -4, 0, 1, 2, 5])
 
 
 
