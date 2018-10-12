@@ -42,52 +42,84 @@ def quick_sort(num_list):
 assert(quick_sort([40, 3, 2, 8, 7])==[2, 3, 7, 8, 40])
 
 
-def make_merge_iter(lst_1, lst_2):
+# def make_merge_iter(lst_1, lst_2):
 
-	result = []
+# 	result = []
 
-	while lst_1 or lst_2:
-		if not lst_2:
-			result.extend(lst_1)
-			break
+# 	while lst_1 or lst_2:
+# 		if not lst_2:
+# 			result.extend(lst_1)
+# 			break
 
-		elif not lst_1:
-			result.extend(lst_2)
-			break
+# 		elif not lst_1:
+# 			result.extend(lst_2)
+# 			break
 
-		elif lst_1[0] <= lst_2[0]:
-			result.append(lst_1[0])
-			lst_1 = lst_1[1:]
+# 		elif lst_1[0] <= lst_2[0]:
+# 			result.append(lst_1[0])
+# 			lst_1 = lst_1[1:]
 
-		else:
-			result.append(lst_2[0])
-			lst_2 = lst_2[1:]
+# 		else:
+# 			result.append(lst_2[0])
+# 			lst_2 = lst_2[1:]
 
-	return result
+# 	return result
 
-assert(make_merge_iter([1, 2], [-4, 3]) == [-4, 1, 2, 3])
+# assert(make_merge_iter([1, 2], [-4, 3]) == [-4, 1, 2, 3])
 
-def make_merge(lst_1, lst_2):
+# def make_merge(lst_1, lst_2):
 
-	if not lst_2:
-		return lst_1
+# 	if not lst_2:
+# 		return lst_1
 
-	elif not lst_1:
-		return lst_2
+# 	elif not lst_1:
+# 		return lst_2
 
-	elif lst_1[0] <= lst_2[0]:
+# 	elif lst_1[0] <= lst_2[0]:
 		
-		return [lst_1[0]] + make_merge(lst_1[1:], lst_2)
+# 		return [lst_1[0]] + make_merge(lst_1[1:], lst_2)
 
-	elif lst_1[0] > lst_2[0]:
+# 	elif lst_1[0] > lst_2[0]:
 
-		return [lst_2[0]] + make_merge(lst_1, lst_2[1:])
+# 		return [lst_2[0]] + make_merge(lst_1, lst_2[1:])
+
+
+# assert(make_merge([1, 2], [-4, 3]) == [-4, 1, 2, 3])
+
+# def merge_sort(num_list):
+	
+# 	if len(num_list) <= 1:
+# 		return num_list
+
+# 	mid = len(num_list)//2
+# 	first = merge_sort(num_list[:mid])
+# 	second = merge_sort(num_list[mid:])
+
+# 	return make_merge(first, second)
+
+# assert(merge_sort([40, 3, 2, 8, 7]) == [2, 3, 7, 8, 40])
+
+
+def make_merge(first, second):
+
+	if not first:
+		return second
+
+	elif not second:
+		return first
+
+	elif first[0] <= second[0]:
+		return [first[0]] + make_merge(first[1:], second)
+
+
+	else:
+		return [second[0]] + make_merge(first, second[1:])
 
 
 assert(make_merge([1, 2], [-4, 3]) == [-4, 1, 2, 3])
 
 def merge_sort(num_list):
-	
+
 	if len(num_list) <= 1:
 		return num_list
 
@@ -98,7 +130,6 @@ def merge_sort(num_list):
 	return make_merge(first, second)
 
 assert(merge_sort([40, 3, 2, 8, 7]) == [2, 3, 7, 8, 40])
-
 
 
 
