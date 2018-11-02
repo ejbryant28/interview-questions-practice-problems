@@ -20,3 +20,20 @@ def reverse(x):
     new_num = ''.join(reversed(num_matches))
                              
     return int(new_num)
+
+
+def isPalindrome(x):
+    """
+    :type x: int
+    :rtype: bool
+    """
+
+    num = [d for d in str(x)]
+
+    rev = list(reversed(num))
+    if num == rev:
+        return True
+    
+    return False
+
+print(isPalindrome(121))
