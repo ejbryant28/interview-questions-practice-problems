@@ -160,4 +160,57 @@ assert(isValid('{})') == False)
 assert(isValid('') == False)
 assert(isValid('{}[({})]') == True)
 
+def longestCommonPrefix(strs):
+    """
+    :type strs: List[str]
+    :rtype: str
+    """
+
+    if not strs:
+        return ''
+
+    prefix = []
+
+    for char in zip(*strs):
+        char_set = set(char)
+
+        if len(char_set) != 1:
+            break
+
+        prefix += char_set.pop()
+
+    return ''.join(prefix)
+
+
+assert(longestCommonPrefix(["flower","flow","alight"])== '')
+assert(longestCommonPrefix(["flower","flow","flight"])== 'fl')
+assert(longestCommonPrefix(["flower","flow","flowers"])== 'flow')
+
+def strStr(haystack, needle):
+    """
+    :type haystack: str
+    :type needle: str
+    :rtype: int
+    """
+    
+    if not needle:
+        return 0
+    
+    for i in range(len(haystack) - len(needle) + 1):
+        
+        if haystack[i:i+len(needle)] == needle:
+            return i
+        
+    return -1
+
+
+assert(strStr('hello', 'll') == 2)
+assert(strStr('dklsa;', 'sdfkls') == -1)
+assert(strStr('skjdfl;', '') == 0)
+assert(strStr('a', 'a') == 0)
+
 print('passed!')
+
+
+
+
