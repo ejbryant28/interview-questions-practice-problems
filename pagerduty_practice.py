@@ -209,6 +209,24 @@ assert(strStr('dklsa;', 'sdfkls') == -1)
 assert(strStr('skjdfl;', '') == 0)
 assert(strStr('a', 'a') == 0)
 
+def lengthOfLastWord(s):
+    """
+    :type s: str
+    :rtype: int
+    """
+    
+    sentence = s.split()
+    
+    if len(sentence) < 1:
+        return 0
+    
+    return len(sentence[-1])
+
+assert(lengthOfLastWord('a ')==1)
+assert(lengthOfLastWord('')==0)
+assert(lengthOfLastWord('hello world') == 5)
+
+
 print('passed!')
 
 
