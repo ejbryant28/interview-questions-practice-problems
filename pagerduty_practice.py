@@ -382,7 +382,6 @@ def isPalindrome(s):
 # print(isPalindrome(''))
 # print('passed!')
 
-import math
 def rev_int(n):
 
     #n, and new_num
@@ -415,6 +414,33 @@ assert(rev_int(-123)==-321)
 assert(rev_int(0)==0)
 assert(rev_int(12340)==4321)
 assert(rev_int(1234)==4321)
+
+def rev_int_2(n):
+
+    if n < 0:
+        neg = True
+        n = abs(n)
+
+    else:
+        neg = False
+
+    rev = 0
+
+    while n > 0:
+        pop = n % 10
+        n -= pop
+        n /= 10
+
+        rev = rev * 10 + pop
+
+    if neg:
+        rev *= -1
+
+    return rev
+
+assert(rev_int_2(1234) == 4321)
+assert(rev_int_2(190) == 91)
+assert(rev_int_2(-1290) == -921)
 
 print('passed!')
 
