@@ -94,3 +94,20 @@ var removeDuplicates = function(nums) {
 // console.log(removeDuplicates([]) == [])
 // console.log(removeDuplicates([1]) == [1])
 // console.log(removeDuplicates([1, 1, 3]) == [1, 3])
+
+var twoSum = function(nums, target) {
+    
+    let i 
+    for (i=0; i < nums.length; i ++) {
+        console.log(i)
+        let dif = target - nums[i]
+        if (dif in nums) {
+            return [i, nums.indexOf(dif)]
+        }
+    }
+    return false
+    
+};
+
+// console.log(twoSum([1, 2, 3, 4, 5], 4))
+console.log(twoSum([2, 7, 11, 15], 9))
